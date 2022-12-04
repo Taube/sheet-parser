@@ -1,0 +1,161 @@
+.App {
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 2rem;
+  text-align: center;
+}
+
+table {
+  width: 100%;
+}
+
+.data-table td {
+  width: 20%;
+}
+
+th {
+  text-align: left;
+}
+
+.pagination {
+  width: 100%;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pagination button {
+  width: 20%;
+}
+
+/* Modal -----------------------------------------------*/
+.modal-wrap {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+}
+
+.modal-component {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+  animation-duration: 0.25s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
+
+.close {
+  position: absolute;
+  z-index: 1;
+  top: -3rem;
+  right: 0;
+
+  padding: 0;
+  cursor: pointer;
+  align-self: flex-end;
+  background-color: transparent;
+  border: 0;
+  font-size: 24px;
+}
+
+.modal-grid {
+  width: 100%;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.inner-grid {
+  overflow-y: auto;
+  max-height: 90vh;
+}
+
+.modal-content {
+  position: relative;
+  color: #333;
+  background-color: white;
+  border-radius: 0.5rem;
+  min-height: 5rem;
+  padding: 1rem;
+}
+
+.backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  opacity: 0;
+
+  background-color: #333;
+  animation-duration: 0.25s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.modal-component {
+  animation-name: modalFadeInAnimation;
+}
+
+.backdrop {
+  animation-name: backdropFadeInAnimation;
+}
+
+.modal-close .modal-component {
+  animation-name: modalFadeOutAnimation;
+}
+
+.modal-close .backdrop {
+  animation-name: backdropFadeOutAnimation;
+}
+
+@keyframes modalFadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes modalFadeOutAnimation {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes backdropFadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes backdropFadeOutAnimation {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+  }
+}
